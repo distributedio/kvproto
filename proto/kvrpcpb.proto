@@ -111,6 +111,7 @@ message GetRequest {
     Context context = 1;
     bytes key = 2;
     uint64 version = 3;
+    bool read_only = 4; // get in a readonly txn
 }
 
 message GetResponse {
@@ -130,6 +131,7 @@ message ScanRequest {
     // For compatibility, when scanning forward, the range to scan is [start_key, end_key), where start_key < end_key;
     // and when scanning backward, it scans [end_key, start_key) in descending order, where end_key < start_key.
     bytes end_key = 7;
+    bool read_only = 8; // scan in a readonly txn
 }
 
 message KvPair {
@@ -183,6 +185,8 @@ message PrewriteRequest {
     // If min_commit_ts > 0, this is large transaction proto, the final commit_ts
     // would be infered from min_commit_ts.
     uint64 min_commit_ts = 10;
+    uint64 coordinator_id = 11; // the store id of coordinator
+    repeated bytes participants = 12; // address list of participant 
 }
 
 message PrewriteResponse {

@@ -4,7 +4,8 @@ CURDIR := $(shell pwd)
 
 export PATH := $(CURDIR)/bin/:$(PATH)
 
-all: go rust c++
+#all: go rust c++
+all: go rust
 
 init:
 	mkdir -p $(CURDIR)/bin
@@ -16,8 +17,8 @@ go: init
 rust: init
 	cargo check
 
-c++:
-	./generate_cpp.sh
-	rm -rf build_cpp && mkdir build_cpp && cd build_cpp && cmake ../cpp && make && cd .. && rm -rf build_cpp
-
+#c++:
+#	./generate_cpp.sh
+#	rm -rf build_cpp && mkdir build_cpp && cd build_cpp && cmake ../cpp && make && cd .. && rm -rf build_cpp
+#
 .PHONY: all
