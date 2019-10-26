@@ -10,13 +10,12 @@ import (
 
 	proto "github.com/golang/protobuf/proto"
 
+	coprocessor "github.com/distributedio/kvproto/pkg/coprocessor"
+	kvrpcpb "github.com/distributedio/kvproto/pkg/kvrpcpb"
+
+	raft_serverpb "github.com/distributedio/kvproto/pkg/raft_serverpb"
+
 	_ "github.com/gogo/protobuf/gogoproto"
-
-	coprocessor "github.com/pingcap/kvproto/pkg/coprocessor"
-
-	kvrpcpb "github.com/pingcap/kvproto/pkg/kvrpcpb"
-
-	raft_serverpb "github.com/pingcap/kvproto/pkg/raft_serverpb"
 
 	context "golang.org/x/net/context"
 

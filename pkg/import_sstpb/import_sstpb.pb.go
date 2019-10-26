@@ -10,13 +10,13 @@ import (
 
 	proto "github.com/golang/protobuf/proto"
 
+	errorpb "github.com/distributedio/kvproto/pkg/errorpb"
+
+	kvrpcpb "github.com/distributedio/kvproto/pkg/kvrpcpb"
+
+	metapb "github.com/distributedio/kvproto/pkg/metapb"
+
 	_ "github.com/gogo/protobuf/gogoproto"
-
-	errorpb "github.com/pingcap/kvproto/pkg/errorpb"
-
-	kvrpcpb "github.com/pingcap/kvproto/pkg/kvrpcpb"
-
-	metapb "github.com/pingcap/kvproto/pkg/metapb"
 
 	context "golang.org/x/net/context"
 

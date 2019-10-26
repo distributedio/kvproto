@@ -10,9 +10,9 @@ import (
 
 	proto "github.com/golang/protobuf/proto"
 
-	_ "github.com/gogo/protobuf/gogoproto"
+	metapb "github.com/distributedio/kvproto/pkg/metapb"
 
-	metapb "github.com/pingcap/kvproto/pkg/metapb"
+	_ "github.com/gogo/protobuf/gogoproto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.

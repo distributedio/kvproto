@@ -10,9 +10,9 @@ import (
 
 	proto "github.com/golang/protobuf/proto"
 
-	_ "github.com/gogo/protobuf/gogoproto"
+	import_sstpb "github.com/distributedio/kvproto/pkg/import_sstpb"
 
-	import_sstpb "github.com/pingcap/kvproto/pkg/import_sstpb"
+	_ "github.com/gogo/protobuf/gogoproto"
 
 	context "golang.org/x/net/context"
 

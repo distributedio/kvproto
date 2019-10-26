@@ -10,11 +10,11 @@ import (
 
 	proto "github.com/golang/protobuf/proto"
 
+	eraftpb "github.com/distributedio/kvproto/pkg/eraftpb"
+
+	metapb "github.com/distributedio/kvproto/pkg/metapb"
+
 	_ "github.com/gogo/protobuf/gogoproto"
-
-	eraftpb "github.com/pingcap/kvproto/pkg/eraftpb"
-
-	metapb "github.com/pingcap/kvproto/pkg/metapb"
 
 	context "golang.org/x/net/context"
 

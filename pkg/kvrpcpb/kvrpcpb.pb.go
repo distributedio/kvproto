@@ -10,11 +10,11 @@ import (
 
 	proto "github.com/golang/protobuf/proto"
 
+	errorpb "github.com/distributedio/kvproto/pkg/errorpb"
+
+	metapb "github.com/distributedio/kvproto/pkg/metapb"
+
 	_ "github.com/gogo/protobuf/gogoproto"
-
-	errorpb "github.com/pingcap/kvproto/pkg/errorpb"
-
-	metapb "github.com/pingcap/kvproto/pkg/metapb"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.

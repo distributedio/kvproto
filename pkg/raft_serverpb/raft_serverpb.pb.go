@@ -10,9 +10,9 @@ import (
 
 	proto "github.com/golang/protobuf/proto"
 
-	eraftpb "github.com/pingcap/kvproto/pkg/eraftpb"
+	eraftpb "github.com/distributedio/kvproto/pkg/eraftpb"
 
-	metapb "github.com/pingcap/kvproto/pkg/metapb"
+	metapb "github.com/distributedio/kvproto/pkg/metapb"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
