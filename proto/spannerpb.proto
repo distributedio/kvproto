@@ -1,0 +1,53 @@
+syntax = "proto3";
+package spannerpb;
+
+message GetRequest {
+    uint64 txn_id = 1;
+    bytes key = 2;
+    uint64 version = 3;
+    bool read_only = 4;
+}
+
+message GetResponse {
+    uint64 error_code = 1;
+    bytes value = 2;
+}
+
+enum Type {
+    Put = 0;
+    Delete = 1;
+    Read = 2;
+}
+
+message Operation {
+    Type type = 1;
+    bytes key = 2;
+    bytes value = 3;
+}
+
+message CommitRequest {
+    uint64 txn_id = 1;
+    repeated Operation operations = 2;
+    bytes coordinator_id = 3; // the store id of coordinator
+    repeated bytes participant_ids = 4; // address list of participant 
+}
+
+message CommitResponse {
+    uint64 error_code = 1;
+    uint64 version = 2;
+}
+
+message HeartBeatRequest {
+    uint64 txn_id = 1;
+    uint64 ttl = 2;
+}
+
+message HeartBeatResponse {
+    uint64 error_code = 1;
+}
+
+service Spanner {
+    rpc Get(GetRequest) returns(GetResponse) {}
+    rpc Commit(CommitRequest) returns(CommitResponse) {}
+    rpc HeartBeat(HeartBeatRequest) returns(HeartBeatResponse) {}
+}
